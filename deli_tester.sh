@@ -57,3 +57,14 @@ echo
 
 echo
 echo 
+echo "Identical Sandwiches Arbitration"
+echo 
+
+time ./deli 3 equal.in0 equal.in1 equal.in2 > deli_equal_test_res.txt
+
+echo 
+
+./diff deli_equal_test_true.txt deli_equal_test_res.txt
+
+echo
+echo 

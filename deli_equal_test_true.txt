@@ -1,0 +1,13 @@
+POSTED: cashier 0 sandwich 50
+POSTED: cashier 1 sandwich 50
+POSTED: cashier 2 sandwich 50
+READY: cashier 0 sandwich 50
+POSTED: cashier 0 sandwich 50
+READY: cashier 1 sandwich 50
+POSTED: cashier 1 sandwich 50
+READY: cashier 2 sandwich 50
+POSTED: cashier 2 sandwich 50
+READY: cashier 0 sandwich 50
+READY: cashier 1 sandwich 50
+READY: cashier 2 sandwich 50
+Thread library exiting.
