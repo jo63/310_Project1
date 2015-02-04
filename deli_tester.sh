@@ -24,6 +24,17 @@ echo
 
 echo
 echo 
+echo "Provided SW Test With Small Board" 
+echo
+
+time ./deli 1 sw.in0 sw.in1 sw.in2 sw.in3 sw.in4 > deli_provided_test_small_board_res.txt
+
+echo 
+
+./diff deli_provided_test_small_board_true.txt deli_provided_test_small_board_res.txt
+
+echo
+echo 
 echo "Invalid Sandwich Number Entry"
 echo 
 
