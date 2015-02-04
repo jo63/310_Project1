@@ -39,13 +39,13 @@ void readFile(vector<Cashier> cashiers){
     string lineData;
     double tmp;
 
-    for(int i =0;i<i<sizeof(input_files);i++)
+    for(int i =0;i<i<sizeof(input_files-2);i++)
     {
     	//store this into a vector ifstream myfile (input_files[i], ios::in);
     	vector<int> orders;
     	ifstream infile;
 
-    	char* t = input_files[i];
+    	char* t = input_files[i+2];
     	ifstream read(t);
     	int temp;
     	while(read>>temp)
@@ -70,7 +70,8 @@ void main (int argc, char *argv[]){
 	// Initializes Standard Global Variables
 	cork_board_max = argv[1];
 	cashier_count = argc - 2;
-	input_files = (char*) argv[2];
+//	input_files = (char*) (argv + 2);
+	input_files = argv;
 
 
 	std::vector<Cashier> cashiers;
