@@ -29,7 +29,7 @@ class Cashier {
 };
 
 
-char* input_files;
+char** input_files;
 int cork_board_max, cashier_count;
 
 void readFile(vector<Cashier> cashiers){
@@ -39,13 +39,14 @@ void readFile(vector<Cashier> cashiers){
     string lineData;
     double tmp;
 
-    for(int i =0;i<i<sizeof(input_files-2);i++)
+    for(int i=0;i<cashier_count;i++)
     {
     	//store this into a vector ifstream myfile (input_files[i], ios::in);
     	vector<int> orders;
     	ifstream infile;
 
     	char* t = input_files[i+2];
+		cout << t; 
     	ifstream read(t);
     	int temp;
     	while(read>>temp)
@@ -60,7 +61,7 @@ void readFile(vector<Cashier> cashiers){
 }
 
 
-void main (int argc, char *argv[]){
+void main (int argc, char** argv[]){
 	// Checks that there are enough inputs
 	if (argc <= 2) {
 		cout << 'More Inputs Required';
