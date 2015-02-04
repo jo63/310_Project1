@@ -1,0 +1,7 @@
+POSTED: cashier 0 sandwhich 53
+POSTED: cashier 1 sandwhich 914
+POSTED: cashier 2 sandwhich 827
+READY: cashier 0 sandwhich 53
+POSTED: cashier 3 sandwhich 302
+ERROR: INVALID SANDWHICH ID
+Thread library exiting.
