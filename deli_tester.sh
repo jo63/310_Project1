@@ -35,12 +35,25 @@ echo
 
 echo
 echo 
-echo "Invalid Sandwich Number Entry"
+echo "Invalid Sandwich Number Entry Test"
 echo 
 
-time ./deli 3 inv.in0 inv.in1 inv.in2 > deli_invalid_res.txt
+time ./deli 3 inv.in0 inv.in1 inv.in2 > deli_invalid_test_res.txt
 
 echo 
 
 ./diff deli_invalid_test_true.txt deli_invalid_test_res.txt
 
+echo
+echo 
+echo "Non Equal Cashier File Lengths Test"
+echo 
+
+time ./deli 3 lengths.in0 lengths.in1 lengths.in2 > deli_lengths_test_res.txt
+
+echo 
+
+./diff deli_lengths_test_true.txt deli_lengths_test_res.txt
+
+echo
+echo 

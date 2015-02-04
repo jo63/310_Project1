@@ -1,0 +1,15 @@
+POSTED: cashier 0 sandwich 900
+POSTED: cashier 1 sandwich 4
+POSTED: cashier 2 sandwich 16
+READY: cashier 1 sandwich 4
+READY: cashier 2 sandwich 16
+POSTED: cashier 2 sandwich 950
+READY: cashier 0 sandwich 900
+POSTED: cashier 0 sandwich 700
+READY: cashier 2 sandwich 950
+READY: cashier 0 sandwich 700
+POSTED: cashier 0 sandwich 320
+READY: cashier 0 sandwich 320
+POSTED: cashier 0 sandwich 500
+READY: cashier 0 sandwich 500
+Thread library exiting.
