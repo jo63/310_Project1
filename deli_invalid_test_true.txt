@@ -1,7 +1,7 @@
-POSTED: cashier 0 sandwhich 53
-POSTED: cashier 1 sandwhich 914
-POSTED: cashier 2 sandwhich 827
-READY: cashier 0 sandwhich 53
-POSTED: cashier 3 sandwhich 302
-ERROR: INVALID SANDWHICH ID
+POSTED: cashier 0 sandwich 53
+POSTED: cashier 1 sandwich 914
+POSTED: cashier 2 sandwich 827
+READY: cashier 0 sandwich 53
+POSTED: cashier 3 sandwich 302
+ERROR: INVALID SANDWICH ID
 Thread library exiting.
