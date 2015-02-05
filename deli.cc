@@ -14,16 +14,16 @@ class Cashier {
 
 	public:
 
-		vector<int> orderList;
+		vector<int> orderList; // BE SURE TO INDEX INTO THE ORDERLIST TO ACCESS SEPARATE ORDER
 
 		int cur_order;
 
-		bool isEmpty(){
-			if (orderList.size() == 0) return true;
+		bool isEmpty(){						// THIS WORKS
+			if (orderList.size() == cur_order) return true;
 			return false;
 		}
 
-		int getNextOrder(){
+		int getNextOrder(){ //THIS WORKS
 			int temp = orderList.at(cur_order);
 			cur_order++;
 			return temp;
@@ -31,42 +31,51 @@ class Cashier {
 
 };
 
+class Corkboard {
+
+	public:
+
+
+
+};
+
+
 
 char** input_files;
 int cork_board_max, cashier_count;
 
-void readFile(vector<Cashier> cashiers){
+vector<Cashier*> readFile(){	//THIS WORKS
 
-	vector<double> Main;
-    int count;
-    string lineData;
-    double tmp;
+	vector<Cashier*> cashiers;
 
     for(int i=0;i<cashier_count;i++)
     {
     	//store this into a vector ifstream myfile (input_files[i], ios::in);
     	vector<int> orders;
     	ifstream infile;
-		
-		stringstream ss;
+
 		char* t = (char*) input_files[i+2];
-		int counter = 0;
-		while(t[counter] ~= ' ')
-		{
-			ss << t[counter];
-		}
-		
-    	cout << ss;
-    	ifstream read(ss);
+
+		ifstream read(t);
+
     	int temp;
     	while(read>>temp)
     	{
     		orders.push_back(temp);
+
     	}
 
-//    	Cashier c = new Cashier(orders);
-//    	cashiers.push_back(c);
+    	Cashier* c = new Cashier;
+    	c->orderList = orders;
+
+    	cashiers.push_back(c);
     }
+//		UNCOMMENT FOR DEBUGGING
+//    for (int i =0; i < cashier_count; i++){
+//    	cout << cashiers[i]->orderList[0];
+//    }
+
+    return cashiers;
 
 }
 
@@ -81,14 +90,21 @@ int main (int argc, char** argv){
 	// Initializes Standard Global Variables
 	cork_board_max = atoi(argv[1]);
 	cashier_count = argc - 2;
-//	input_files = (char*) (argv + 2);
 	input_files = argv;
 
+	std::vector<Cashier*> cashiers;
+	cashiers = readFile();
 
-	std::vector<Cashier> cashiers;
-	readFile(cashiers);
 
-
+//	UNCOMMENT FOR DEBUGGING
+//	for (int i = 0; i < cashier_count; i++){
+//		cout << cashiers[i]->getNextOrder() << endl;
+//		cout << cashiers[i]->getNextOrder() << endl;
+//		if (cashiers[i]->isEmpty()){
+//			cout << "IS EMPTY!" << endl;
+//		}
+//		cout << "end of" << i << "loop" << endl;
+//	}
 
 	return 0;
 
