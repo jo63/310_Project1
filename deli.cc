@@ -3,6 +3,7 @@
 #include <unistd.h>
 #include <assert.h>
 #include <iostream>
+#include <sstream>
 #include <string>
 #include <vector>
 #include <fstream>
@@ -46,10 +47,17 @@ void readFile(vector<Cashier> cashiers){
     	//store this into a vector ifstream myfile (input_files[i], ios::in);
     	vector<int> orders;
     	ifstream infile;
-
-    	char* t = (char*) input_files[i+2];
-		cout << *t;
-    	ifstream read(t);
+		
+		stringstream ss;
+		char* t = (char*) input_files[i+2];
+		int counter = 0;
+		while(t[counter] ~= ' ')
+		{
+			ss << t[counter];
+		}
+		
+    	cout << ss;
+    	ifstream read(ss);
     	int temp;
     	while(read>>temp)
     	{
