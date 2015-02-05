@@ -1,7 +1,9 @@
 #include <stdio.h>
+#include <stdlib.h>
 #include <unistd.h>
 #include <assert.h>
 #include <iostream>
+#include <string>
 #include <vector>
 #include <fstream>
 using namespace std;
@@ -45,8 +47,8 @@ void readFile(vector<Cashier> cashiers){
     	vector<int> orders;
     	ifstream infile;
 
-    	char* t = input_files[i+2];
-		cout << t; 
+    	char* t = (char*) input_files[i+2];
+		cout << *t;
     	ifstream read(t);
     	int temp;
     	while(read>>temp)
@@ -54,22 +56,22 @@ void readFile(vector<Cashier> cashiers){
     		orders.push_back(temp);
     	}
 
-    	Cashier c = new Cashier(orders);
-    	cashiers.push_back(c);
+//    	Cashier c = new Cashier(orders);
+//    	cashiers.push_back(c);
     }
 
 }
 
 
-void main (int argc, char** argv[]){
+int main (int argc, char** argv){
 	// Checks that there are enough inputs
 	if (argc <= 2) {
-		cout << 'More Inputs Required';
-		return;
+		cout << "More Inputs Required";
+		return 0;
 	}
 
 	// Initializes Standard Global Variables
-	cork_board_max = argv[1];
+	cork_board_max = atoi(argv[1]);
 	cashier_count = argc - 2;
 //	input_files = (char*) (argv + 2);
 	input_files = argv;
@@ -80,9 +82,7 @@ void main (int argc, char** argv[]){
 
 
 
-
-
-	return;
+	return 0;
 
 
 }
