@@ -1,6 +1,7 @@
 EXECUTABLES = deli 
 CC = g++ -m32
-FLAG= -o -Wall -ldl
+PREFLAG= -Wall -o  
+POSTFLAG = -ldl 
 
 all: $(EXECUTABLES)
 
@@ -11,7 +12,7 @@ debug: $(EXECUTABLES)
 	done
 
 deli: deli.cc dthreads.h dthreads.o libinterrupt.a
-		$(CC) $(FLAG) deli deli.cc dthreads.h dthreads.o libinterrupt.a
+		$(CC) $(PREFLAG) deli deli.cc dthreads.h dthreads.o libinterrupt.a
 		
 
 
