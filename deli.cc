@@ -15,59 +15,11 @@ struct Order {
     int cashier_num;
 };
 
-// Class for each Cashier thread
-class Cashier {
-
-	public:
-
-		vector<Order> orderList; // BE SURE TO INDEX INTO THE ORDERLIST TO ACCESS SEPARATE ORDER
-
-		int cur_order;
-
-		bool isEmpty(){						// THIS WORKS
-			if (orderList.size() == cur_order) return true;
-			return false;
-		}
-
-		int getNextOrder(){ //THIS WORKS
-			int temp = orderList.at(cur_order);
-			cur_order++;
-			return temp;
-		}
-
-};
-
-class Corkboard {
-    private:
-        int max_size;
-	public:
-    veector<Order> orders; //this needs to be a vector because you dont know how many orders are already in the corkboard when you add a new order...or do you? :S
-    Corkboard(int max_size)
-    {
-        max_size = max_size;
-    }
-    void addOrder(Order new_order) {
-        if(orders.size() == max_size)
-            cout << "Cork board at max capacity";
-        orders.push_back(new_order);
-        sortBoard();
-    }
-    
-    //below is sorting the board everytime a new order is added; defined own comparator to compare order number only.
-    bool compare(Order i, Order j) (return (i.order_num<j.order_num);)
-    void sortBoard()
-    {
-        orders.sort(orders.begin(), orders.end(), compare);
-        //TODO: sort the corkboard
-    }
-
-
-};
-
 
 
 char** input_files;
 int cork_board_max, cashier_count;
+//instances of objects accessible in
 
 vector<Cashier*> readFile(){	//THIS WORKS
 
@@ -76,7 +28,9 @@ vector<Cashier*> readFile(){	//THIS WORKS
     for(int i=0;i<cashier_count;i++)
     {
     	//store this into a vector ifstream myfile (input_files[i], ios::in);
-    	vector<int> orders;
+        
+        //need to figure out how to initialize order with respective
+    	vector<Order> orders;
     	ifstream infile;
 
 		char* t = (char*) input_files[i+2];
@@ -86,8 +40,10 @@ vector<Cashier*> readFile(){	//THIS WORKS
     	int temp;
     	while(read>>temp)
     	{
+            Order ord = new Order();
+            ord->order_num = temp;
+            ord->cashier_num
     		orders.push_back(temp);
-
     	}
 
     	Cashier* c = new Cashier;
