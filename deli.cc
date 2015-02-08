@@ -39,11 +39,27 @@ class Cashier {
 };
 
 class Corkboard {
-
+    private:
+        int max_size;
 	public:
-    int[] orders;
-    Corkboard(int max_count) {
-        orders = int[max_count];
+    veector<Order> orders; //this needs to be a vector because you dont know how many orders are already in the corkboard when you add a new order...or do you? :S
+    Corkboard(int max_size)
+    {
+        max_size = max_size;
+    }
+    void addOrder(Order new_order) {
+        if(orders.size() == max_size)
+            cout << "Cork board at max capacity";
+        orders.push_back(new_order);
+        sortBoard();
+    }
+    
+    //below is sorting the board everytime a new order is added; defined own comparator to compare order number only.
+    bool compare(Order i, Order j) (return (i.order_num<j.order_num);)
+    void sortBoard()
+    {
+        orders.sort(orders.begin(), orders.end(), compare);
+        //TODO: sort the corkboard
     }
 
 
