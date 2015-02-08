@@ -9,12 +9,19 @@
 #include <fstream>
 using namespace std;
 
+//encapsulation of order number as well as the cashier the order came from.
+class Order {
+public:
+    int order_num;
+    int cashier_num;
+};
+
 // Class for each Cashier thread
 class Cashier {
 
 	public:
 
-		vector<int> orderList; // BE SURE TO INDEX INTO THE ORDERLIST TO ACCESS SEPARATE ORDER
+		vector<Order> orderList; // BE SURE TO INDEX INTO THE ORDERLIST TO ACCESS SEPARATE ORDER
 
 		int cur_order;
 
@@ -34,7 +41,10 @@ class Cashier {
 class Corkboard {
 
 	public:
-
+    int[] orders;
+    Corkboard(int max_count) {
+        orders = int[max_count];
+    }
 
 
 };
