@@ -10,8 +10,7 @@
 using namespace std;
 
 //encapsulation of order number as well as the cashier the order came from.
-class Order {
-public:
+struct Order {
     int order_num;
     int cashier_num;
 };
